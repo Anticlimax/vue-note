@@ -45,11 +45,14 @@
   #Toolbar {
     flex: 1;
     min-width: 90px;
+    max-width:110px;
     background-color: whitesmoke;
   }
 
   #NoteList {
     flex: 4;
+    max-width: 450px;
+    min-width: 400px;
     background-color: lightblue;
   }
 

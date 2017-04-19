@@ -26,13 +26,9 @@
         init:''
       }
     },
-//    created(){
-//      this.$store.commit('INIT_DATA')
-//    },
     computed: {
       noteList(){
         if (this.show === 'all') {
-          console.log(3)
           return this.$store.state.notes
         } else if (this.show === 'favorites') {
           return this.$store.state.notes.filter((item) => {
@@ -53,8 +49,11 @@
 </script>
 <style>
   #NoteList {
+    height: 100%;
+
     border-right: 1px solid #f2f2f2;
     background-color: #f2f2f2;
+
   }
 
   .header {
@@ -93,14 +92,22 @@
   }
 
   .list {
+    height: 77%;
     margin-top: 2rem;
     background-color: white;
+    overflow: scroll;
   }
+
 
   .list li {
     padding: 1rem;
     font-size: 1.2rem;
+    height: 3.3rem;
     cursor: pointer;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+
   }
 
   .selected {
