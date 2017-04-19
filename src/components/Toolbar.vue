@@ -10,7 +10,6 @@
 <script>
 
   export default {
-
     computed:{
       activeNoteStar(){
         return this.$store.state.activeNote.favorite

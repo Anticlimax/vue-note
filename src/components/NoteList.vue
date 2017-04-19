@@ -12,35 +12,41 @@
           @click="activeNote(note)"
           :class="{ activeLi : current === note}">
         {{ note.title }}
+
       </li>
     </ul>
   </div>
 </template>
 <script>
   export default {
-    name:'NodeList',
+    name: 'NodeList',
     data(){
       return {
-        show: 'all'
+        show: 'all',
+        init:''
       }
     },
-    computed:{
+//    created(){
+//      this.$store.commit('INIT_DATA')
+//    },
+    computed: {
       noteList(){
-        if(this.show === 'all') {
+        if (this.show === 'all') {
+          console.log(3)
           return this.$store.state.notes
-        } else if(this.show === 'favorites') {
-          return this.$store.state.notes.filter((item)=>{
+        } else if (this.show === 'favorites') {
+          return this.$store.state.notes.filter((item) => {
             return item.favorite === true
           })
         }
       },
       current(){
         return this.$store.state.activeNote
-    }
+      }
     },
-    methods:{
+    methods: {
       activeNote(note){
-        this.$store.commit('ACTIVE_NOTE',note)
+        this.$store.commit('ACTIVE_NOTE', note)
       }
     }
   }
@@ -50,16 +56,19 @@
     border-right: 1px solid #f2f2f2;
     background-color: #f2f2f2;
   }
+
   .header {
     font-size: 2.8rem;
-    padding: 3rem ;
+    padding: 3rem;
     text-align: center;
   }
+
   .btn-wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
   }
+
   .all, .favorites {
     padding: 1rem 3rem;
 
@@ -67,27 +76,33 @@
     border: 1px solid #f2f2f2;
     color: #000;
   }
+
   .all {
     border-radius: 8px 0 0 8px;
-    border-right:none ;
+    border-right: none;
   }
+
   .favorites {
     border-radius: 0 8px 8px 0;
     border-left: none;
   }
+
   .active {
     background-color: lightgray;
-    box-shadow: inset 0 0  20px 0 rgba(0,0,0,.2);
+    box-shadow: inset 0 0 20px 0 rgba(0, 0, 0, .2);
   }
+
   .list {
     margin-top: 2rem;
     background-color: white;
   }
+
   .list li {
     padding: 1rem;
     font-size: 1.2rem;
     cursor: pointer;
   }
+
   .selected {
     background-color: #1e78bb;
     color: white;

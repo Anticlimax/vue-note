@@ -21,6 +21,15 @@
       Toolbar,
       NoteList,
       Editor
+    },
+    created(){
+
+      window.onbeforeunload = ()=>{
+        this.$store.commit('SAVE_DATA')
+      }
+
+      this.$store.commit('INIT_DATA')
+
     }
   }
 </script>
