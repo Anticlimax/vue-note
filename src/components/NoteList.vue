@@ -1,11 +1,13 @@
 <template>
   <div id="NoteList">
-    <h3 class="header">NOTES</h3>
-    <div class="btn-wrapper">
-      <a href="#" class="all" @click="show = 'all'"
-         :class="{active: show === 'all'}">All Notes</a>
-      <a href="#" class="favorites" @click="show = 'favorites'"
-         :class="{active: show === 'favorites'}">Favorites</a>
+    <div class="header-wrapper">
+      <h3 class="header">NOTES</h3>
+      <div class="btn-wrapper">
+        <a href="#" class="all" @click="show = 'all'"
+           :class="{active: show === 'all'}">All Notes</a>
+        <a href="#" class="favorites" @click="show = 'favorites'"
+           :class="{active: show === 'favorites'}">Favorites</a>
+      </div>
     </div>
     <ul class="list">
       <li v-for="note in noteList"
@@ -54,6 +56,10 @@
     border-right: 1px solid #f2f2f2;
     background-color: #f2f2f2;
 
+  }
+
+  .header-wrapper {
+    hieght:23%;
   }
 
   .header {
@@ -107,7 +113,6 @@
     overflow: hidden;
     text-overflow:ellipsis;
     white-space: nowrap;
-
   }
 
   .selected {
