@@ -32,7 +32,7 @@
     }
   }
 </script>
-<style>
+<style scoped>
   #Editor {
     background-color: white;
   }

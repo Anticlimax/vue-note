@@ -40,6 +40,7 @@
     height: 100vh;
     font-family: "Microsoft YaHei UI";
     font-weight: 500;
+    overflow: hidden;
   }
 
   #Toolbar {

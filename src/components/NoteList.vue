@@ -49,7 +49,7 @@
     }
   }
 </script>
-<style>
+<style scoped>
   #NoteList {
     height: 100%;
 
@@ -58,9 +58,7 @@
 
   }
 
-  .header-wrapper {
-    hieght:23%;
-  }
+
 
   .header {
     font-size: 2.8rem;
@@ -100,7 +98,6 @@
   .list {
     height: 77%;
     margin-top: 2rem;
-    background-color: white;
     overflow: scroll;
   }
 
@@ -113,14 +110,10 @@
     overflow: hidden;
     text-overflow:ellipsis;
     white-space: nowrap;
+    background-color: white;
   }
 
-  .selected {
-    background-color: #1e78bb;
-    color: white;
-  }
-
-  .activeLi {
+  .list .activeLi {
     background-color: #337ab7;
     color: white;
   }

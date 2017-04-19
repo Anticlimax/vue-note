@@ -29,7 +29,7 @@
     }
   }
 </script>
-<style>
+<style scoped>
   #Toolbar {
     border: 1px solid #293f4d;
     background-color: #293f4d;
