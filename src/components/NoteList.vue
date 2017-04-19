@@ -2,8 +2,10 @@
   <div id="NoteList">
     <h3 class="header">NOTES</h3>
     <div class="btn-wrapper">
-      <a href="#" class="all active">All Notes</a>
-      <a href="#" class="favorites">Favorites</a>
+      <a href="#" class="all" @click="show = 'all'"
+         :class="{active: show === 'all'}">All Notes</a>
+      <a href="#" class="favorites" @click="show = 'favorites'"
+         :class="{active: show === 'favorites'}">Favorites</a>
     </div>
     <ul class="list">
       <li v-for="note in noteList"
@@ -17,9 +19,20 @@
 <script>
   export default {
     name:'NodeList',
+    data(){
+      return {
+        show: 'all'
+      }
+    },
     computed:{
       noteList(){
-        return this.$store.state.notes
+        if(this.show === 'all') {
+          return this.$store.state.notes
+        } else if(this.show === 'favorites') {
+          return this.$store.state.notes.filter((item)=>{
+            return item.favorite === true
+          })
+        }
       },
       current(){
         return this.$store.state.activeNote
